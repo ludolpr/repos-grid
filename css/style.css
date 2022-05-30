@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgba(241, 244, 255, 0.952);
+  background-color: rgba(233, 233, 233, 0.952);
 }
 
 /* hamburgeur */
@@ -10,7 +10,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
+  width: auto;
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #FFF;
@@ -43,13 +43,14 @@ body {
 
 #menu-toggle {
   display: none;
+
 }
 
 .menu-button,
 .menu-button::before,
 .menu-button::after {
   display: block;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   position: absolute;
   height: 4px;
   width: 30px;
@@ -84,9 +85,10 @@ body {
 
 
 /* texte */
-.txt-center{
-  text-align: center ;
+.txt-center {
+  text-align: center;
 }
+
 /* text color */
 .txt-blk {
   color: black;
@@ -100,9 +102,11 @@ body {
 .box-shd {
   box-shadow: 5px rgb(13, 69, 190);
 }
-.txt-14{
+
+.txt-14 {
   font-size: 14px;
 }
+
 .txt-shd-bl {
   text-shadow: blue 3px;
 }
@@ -126,7 +130,9 @@ body {
 
 /* box's size  */
 
-.vh-20{ height: 20px;}
+.h-20 {
+  height: 20px;
+}
 
 /* spacing,margin,ect */
 
@@ -185,7 +191,8 @@ body {
 .mt-0 {
   margin-top: 0;
 }
-.pd-10{
+
+.pd-10 {
   padding: 10%;
 }
 
@@ -212,7 +219,7 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
   grid-template-areas:
-    "ham . . . ."
+    ". . . . ."
     "title title listItem listItem listItem"
   ;
 
@@ -226,6 +233,9 @@ body {
 
 #navbar>h2 {
   grid-area: title;
+  padding-left: 15px;
+  color: black;
+
 
 }
 
@@ -236,8 +246,9 @@ body {
 
 /* header */
 header {
+  margin-top: 6vh;
   width: 100%;
-  background-image: linear-gradient(rgba(156, 172, 15, 0.171), rgba(15, 45, 214, 0.6)), url("/images/kak-uznat-gde-nahoditsja-chelovek-po-nomeru_3.webp");
+  background-image: linear-gradient(rgba(255, 197, 5, 0.349), rgba(15, 45, 214, 0.6)), url("/images/kak-uznat-gde-nahoditsja-chelovek-po-nomeru_3.webp");
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -268,16 +279,21 @@ header {
   display: flex;
   justify-content: space-around;
 }
-.align-items-center{display: flex; align-items: center;}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
 .spc-btn {
   display: flex;
   justify-content: space-between;
 }
 
 .container {
-  width:60vh;
+  width: 60vh;
   height: 500px;
-  
+
 }
 
 /* list de card */
@@ -302,8 +318,13 @@ header {
   position: absolute;
   color: rgb(14, 108, 231);
   font-size: 32px;
+  padding-left: 15px;
   text-align: center;
   text-shadow: 1px 1px 2px rgb(252, 252, 252), 0 0 1em blue, 0 0 0.2em rgb(255, 255, 255);
+}
+
+.sup2 h5 {
+  text-align: center;
 }
 
 .card>img {
@@ -324,31 +345,31 @@ header {
 /* card place */
 
 #c1 {
-  grid-template-areas: c1;
+
   grid-column-start: 2;
 
 
 }
 
 #c2 {
-  grid-template-areas: c2;
+
   grid-column-start: 4;
 
 }
 
 #c3 {
-  grid-template-areas: c3;
+
   grid-column-start: 6;
 
 }
 
 
 #paragraphe {
+  margin-top: 5vh;
   display: grid;
   grid-area: para;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);
-
 
 }
 
@@ -364,6 +385,12 @@ header {
 #formulaire {
   display: grid;
   grid-area: form;
+  padding-top: 10px;
+  width: 50vw;
+  color: white;
+  border: 5px solid rgb(255, 197, 5);
+  border-radius: 20px;
+  background-color: rgb(10, 96, 167);
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-template-areas:
@@ -375,6 +402,7 @@ header {
 
   ;
 }
+
 /* form id */
 #f1 {
   grid-area: f1;
@@ -393,11 +421,11 @@ header {
 }
 
 #f5 {
-  grid-area: f5
+  grid-area: f5;
 }
 
 #f6 {
-  grid-area: f6
+  grid-area: f6;
 }
 
 #f5 input {
@@ -437,18 +465,302 @@ input {
 }
 
 /* media querry */
+
+@media (max-width: 1024px) {
+
+  header {
+    background-size: cover;
+
+  }
+
+}
+
 @media (max-width: 768px) {
+  #navbar {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "ham . "
+      "title ."
 
- 
+    ;
+
+  }
+  #main{
+    margin-bottom: 0;
+  }
+  #formulaire {
+    width: 50vh;
+  }
+
+  header {
+    margin-top: 0;
+    width: 100%;
+    height: 70vh;
+  }
+
+  .top-nav {
+    background-color: #00BAF0;
+    background: linear-gradient(to left, #4962ee, #45e0f4);
+  }
+
+  .sup2 {
+    font-size: 25px;
+  }
+
+  #navbar {
+    background-color: #00BAF0;
+    color: white;
+
+  }
+
+  #navbar>h2 {
+    padding-left: 15px;
+    font-size: 13px
+  }
+
+  #navbar>ul {
+    font-size: 13px;
+
+  }
+  #paragraphe{
+    margin-top: -50px;
+  }
+  .menu-button-container {
+    display: flex;
+  }
+
+
+  .menu {
+    position: absolute;
+    top: 2em;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu-toggle~.menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked~.menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    ;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  }
+
+  #menu-toggle:checked~.menu a {
+    color: white;
+  }
+
+  .menu>li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(44, 43, 43);
+  }
+
+  nav a {
+    color: white;
+  }
+
+  .menu>li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+
+  
+  .card {
+    font-size: 10px;
+    margin: 5px;
+    font-size: 15px;
+  }
+
+  .list-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  nav h2 {
+    color: white;
+    /* margin-right: 15px; */
+  }
+
+}
+
 textarea {
-  width: 50vw;
+  min-height: 150px;
+  min-width: 150px;
 }
 
-#f6{
-  grid-area: f6;
-  width: 20%;
-}
+@media (max-width: 425px) {
 
 
+  #main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 7vh 80vh auto auto;
+
+    grid-template-areas:
+      "nav nav"
+      "header header"
+      "para para"
+      "list list"
+      "form form"
+    ;
+    width:425px ;
+    margin: 0;
+    padding: 0;
+  }
+
+  #navbar {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    width: 425px;
+    grid-template-areas:
+      "ham . "
+      "title ."
+
+    ;
+    
+  }
+  #navbar>li{
+    width: 150%;
+  }
+  header{
+    overflow: inherit;
+    width: 100%;
+    height: 450px;
+    
+  }
+  #paragraphe {
+    margin-top: -350px;
+    margin-bottom: 350px;
+    display: grid;
+    grid-area: para;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    width: 425px;
+
+  }
+  h4{
+    
+    height: 50px;
+  }
+  #listCard {
+    margin-top: -350px;
+    grid-area: list;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    width: 420px;
+  }
+  .card{
+    width: 425px;
+    display: flex;
+    justify-content: center;
+  }
+  #c1 {
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin: 20px;
+    font-size: 20px;
+
+  }
+
+  #c2 {
+
+    grid-column-start: 2;
+    grid-row-start: 2;
+    margin: 20px;
+  }
+
+  #c3 {
+
+    grid-column-start: 2;
+    grid-row-start: 3;
+    margin: 20px;
+
+  }
+  input{
+    margin-top:0;
+    width: 300px;
+  }
+  textarea{
+    width: 300px;
+  }
+
+  .sup2 {
+    font-size: 40px;
+  }
+
+  .menu>li {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #formulaire {
+    display: grid;
+    grid-area: form;
+    padding-top: 10px;
+    height: 50vh;
+    color: white;
+    border: 5px solid rgb(255, 197, 5);
+    border-radius: 20px;
+    background-color: rgb(10, 96, 167);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "f1 f1"
+      "f2 f2"
+      "f3 f3"
+      "f4 f4"
+      "f5 f5"
+      "f6 f6"
+
+    ;
+    width: 425px;
+    align-items: center;
+  }
+  #f1 {
+    align-items:center;
+  }
+  
+  #f2 {
+    align-items:center;
+  }
+  
+  #f3 {
+    align-items:center;
+  }
+  
+  #f4 {
+    align-items:center;
+  }
+  
+  #f5 {
+    align-items:center;
+  }
+  
+  #f6 {
+    align-items:center;
+  }
 }
- 
